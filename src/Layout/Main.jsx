@@ -15,6 +15,6 @@ const Main = () => {
             {noHeaderFooter || <Footer></Footer>}
         </div>
     );
-};
+}; 
 
 export default Main;
