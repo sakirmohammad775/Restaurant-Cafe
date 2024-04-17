@@ -12,6 +12,7 @@ const FoodCard = ({item}) => {
     const handleToCart=food=>{
         if(user&& user.email){
             //TODO:send cart item to the database
+            console.log(user.email,food);
         }
         else{
             Swal.fire({
