@@ -5,14 +5,16 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
+import SocialLogin from '../../Components/SectionTitle/SocialLogin/SocialLogin';
+
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true)
     const { signIn } = useContext(AuthContext)
-    const navigate=useNavigate()
-    const location=useLocation()
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    const from=location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/"
 
     useEffect(() => {
         loadCaptchaEnginge(6)
@@ -35,7 +37,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate(from,{replace:true})
+                navigate(from, { replace: true })
             })
 
     }
@@ -83,7 +85,7 @@ const Login = () => {
 
                                     <input onBlur={handleValidateCaptcha} type="text" name='captcha' placeholder="Type the captcha above" className="input input-bordered " />
 
-                                    
+
 
                                 </div>
 
@@ -93,10 +95,13 @@ const Login = () => {
                                 </div>
 
                             </form>
-                            <Link to='/signUp'> <p className='text-orange-400'>New here ? Create a New Account</p></Link>
+                          
+                            <Link to='/signUp'> <p className='text-orange-400 ml-10'>New here ? Create a New Account</p></Link>
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </>
     );
