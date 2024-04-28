@@ -43,7 +43,7 @@ const AllUsers = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-                axiosSecure.delete(`/users/${user._id}`)
+                axiosSecure.delete(`users/${user._id}`)
                 .then(res=>{
                     if(res.data.deletedCount>0){
                         refetch()
