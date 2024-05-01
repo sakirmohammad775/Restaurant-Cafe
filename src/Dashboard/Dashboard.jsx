@@ -1,39 +1,40 @@
-import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUtensils,  } from "react-icons/fa";
+import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUtensils, } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import UseCarts from "../Hooks/UseCarts";
 import { FaBookBookmark, FaUsers } from "react-icons/fa6";
+import UseAdmin from "../Hooks/UseAdmin";
 
 
 const Dashboard = () => {
     const [cart] = UseCarts()
-
-    const isAdmin = true
+    //TODO: get isAdmin value from the database
+    const [isAdmin] = UseAdmin()
 
     return (
         <div className="flex text-black ">
             {/* dashboard Side bar */}
             <div className="w-64 min-h-screen bg-orange-400 ">
                 <div className="ml-8 mt-10">
-                <h3 className="text-3xl">BISTRO BOSS</h3>
-                <h3 className="text-2xl tracking-widest">Restaurant</h3>
+                    <h3 className="text-3xl">BISTRO BOSS</h3>
+                    <h3 className="text-2xl tracking-widest">Restaurant</h3>
                 </div>
                 <ul className="menu p-4">
                     {
                         isAdmin ? <>
-                        <li><NavLink to="/dashboard/AdminHome"><FaHome></FaHome>ADMIN HOME</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/reservation"><FaUtensils></FaUtensils> ADD ITEMS</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/cart"><FaList></FaList>MANAGE ITEMS</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/review"><FaBookBookmark></FaBookBookmark>MANAGE BOOKINGS</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/users"><FaUsers></FaUsers>ALL USERS</NavLink>
-                    </li>
+                            <li><NavLink to="/dashboard/AdminHome"><FaHome></FaHome>ADMIN HOME</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/reservation"><FaUtensils></FaUtensils> ADD ITEMS</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/cart"><FaList></FaList>MANAGE ITEMS</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/review"><FaBookBookmark></FaBookBookmark>MANAGE BOOKINGS</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/users"><FaUsers></FaUsers>ALL USERS</NavLink>
+                            </li>
                         </>
                             :
                             <>
