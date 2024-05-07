@@ -21,10 +21,10 @@ const Dashboard = () => {
                 <ul className="menu p-4">
                     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/AdminHome"><FaHome></FaHome>ADMIN HOME</NavLink>
+                            <li><NavLink to="/dashboard/adminHome"><FaHome></FaHome>ADMIN HOME</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/reservation"><FaUtensils></FaUtensils> ADD ITEMS</NavLink>
+                                <NavLink to="/dashboard/addItems"><FaUtensils></FaUtensils> ADD ITEMS</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/cart"><FaList></FaList>MANAGE ITEMS</NavLink>
